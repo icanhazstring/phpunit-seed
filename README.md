@@ -6,7 +6,7 @@ phpunit extenstion with fzaninotto/Faker integration
 
 ## Installation
 
-To install this extension, simply use `composer``.
+To install this extension, simply use `composer`.
 
 ```bash
 $ composer require icanhazstring/phpunit-seed:^0.1
