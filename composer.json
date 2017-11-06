@@ -1,0 +1,33 @@
+{
+    "name": "ando/phpunit-seed",
+    "description": "phpunit extension with fzaninotto/Faker integration",
+    "type": "library",
+    "require": {
+        "php": "^7.0",
+        "phpunit/phpunit": "^6.4",
+        "fzaninotto/Faker": "^1.7"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "icanhazstring",
+            "email": "blubb0r05+github@gmail.com"
+        }
+    ],
+    "bin": [
+        "bin/phpunit-seed"
+    ],
+    "autoload": {
+        "psr-4": {
+            "PHPUnitSeed\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHPUnitSeed\\Test\\": "test"
+        }
+    }
+}

@@ -1,2 +1,56 @@
 # phpunit-seed
-phpunit with fzaninotto/Faker integration
+phpunit extenstion with fzaninotto/Faker integration
+
+## Installation
+
+To install this extension, simply use `composer``.
+
+```bash
+$ composer require icanhazstring/phpunit-seed:^0.1
+```
+
+## Usage
+
+To use this extension, make sure your tests derive from 
+`PHPUnitSeed\Framework\TestCase` instead of the `PHPUnit` default.
+
+This will add a new function `getFaker()` into your test suites.
+
+```php
+class SuperTest extends PHPUnitSeed\Framework\Testcase
+{
+    public function testAwesome()
+    {
+        $name = $this->getFaker()->name();
+        $this->assertEquals($name, $this->getFaker()->name());
+        // should work
+    }
+}
+```
+
+## Run tests with seed
+
+To execute all your tests with `random` or `specific` seeds use the deliverd binary.
+
+```bash
+$ vendor/bin/phpunit-seed [--seed=<int>]
+```
+
+You will get an output similar to this
+
+```bash
+$ vendor/bin/phpunit-seed -c phpunit.xml
+PHPUnit 6.4.3 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 128 ms, Memory: 6.00MB
+
+OK (1 test, 2 assertions)
+
+Randomized with seed: 1234
+```
+
+In the last output line you will see the seed number which was used for this execution.
+If you want to execute the same tests, with same `random` values, use the `--seed=<int>` argument
+for the binary.
