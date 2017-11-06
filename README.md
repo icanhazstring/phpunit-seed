@@ -57,3 +57,6 @@ Randomized with seed: 1234
 In the last output line you will see the seed number which was used for this execution.
 If you want to execute the same tests, with same `random` values, use the `--seed=<int>` argument
 for the binary.
+
+## Faker Documentation
+For a full usage on `Faker` see [fzaninotto/Faker](https://github.com/fzaninotto/Faker)
