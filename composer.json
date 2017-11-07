@@ -1,6 +1,6 @@
 {
-    "name": "ando/phpunit-seed",
-    "description": "phpunit extension with fzaninotto/Faker integration",
+    "name": "icanhazstring/phpunit-seed",
+    "description": "phpunit seeding extension with fzaninotto/Faker integration",
     "type": "library",
     "require": {
         "php": "^7.1",
