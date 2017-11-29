@@ -4,6 +4,7 @@ namespace PHPUnitSeed\Framework;
 
 use Faker\Factory;
 use Faker\Generator;
+use PHPUnitSeed\Util\ArrayUtil;
 
 /**
  * Add Faker into phpunit Testcase
@@ -29,8 +30,16 @@ class TestCase extends \PHPUnit\Framework\TestCase
     private function getFaker($locale)
     {
         if ($this->faker === null || $locale !== $this->fakerLocale) {
+            $providers = $this->faker ? $this->faker->getProviders() : [];
+
             $this->faker = Factory::create($locale);
             $this->fakerLocale = $locale;
+
+            $diff = ArrayUtil::diffProvider($providers, $this->faker->getProviders());
+
+            foreach ($diff as $provider) {
+                $this->faker->addProvider($provider);
+            }
         }
 
         if (defined('PHPUNIT_SEED') && PHPUNIT_SEED) {

@@ -1,14 +1,14 @@
 <?php
-namespace PHPUnitSeed\Test;
+namespace PHPUnitSeed\Test\Unit;
 
-use Faker\Factory;
 use PHPUnitSeed\Framework\TestCase;
+use PHPUnitSeed\Test\Provider\CustomProvider;
 
 /**
  * Class LocaleSeedTest
  *
  * @package PHPUnitSeed\Test
- * @author  Andreas Frömer <andreas.froemer@check24.de>
+ * @author  icanhazstring <blubb0r05+github@gmail.com>
  */
 class LocaleSeedTest extends TestCase
 {
@@ -33,5 +33,17 @@ class LocaleSeedTest extends TestCase
         $this->assertEquals($nameDE, $this->fake('de_DE')->name);
 
         $this->assertNotEquals($nameUS, $nameDE);
+    }
+
+    /**
+     * @test
+     */
+    public function itShouldKeepCustomProviderWhenChangingLocale()
+    {
+        $this->fake()->addProvider(new CustomProvider($this->fake()));
+
+        $value = $this->fake()->custom();
+
+        $this->assertEquals($value, $this->fake('de_DE')->custom());
     }
 }

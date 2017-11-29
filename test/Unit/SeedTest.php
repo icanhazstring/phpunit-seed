@@ -1,5 +1,5 @@
 <?php
-namespace PHPUnitSeed\Test;
+namespace PHPUnitSeed\Test\Unit;
 
 use PHPUnitSeed\Framework\TestCase;
 
