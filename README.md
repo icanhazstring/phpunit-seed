@@ -9,7 +9,7 @@ phpunit extenstion with [fzaninotto/Faker](https://github.com/fzaninotto/Faker) 
 To install this extension, simply use `composer`.
 
 ```bash
-$ composer require icanhazstring/phpunit-seed:^0.1
+$ composer require --dev icanhazstring/phpunit-seed:^0.1
 ```
 
 ## Usage
