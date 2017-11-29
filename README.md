@@ -58,7 +58,7 @@ In the last output line you will see the seed number which was used for this exe
 If you want to execute the same tests, with same `random` values, use the `--seed=<int>` argument
 for the binary.
 
-## Change Fake locale
+## Change Faker locale
 
 You can change the locale of 'Faker' in two ways:
 
