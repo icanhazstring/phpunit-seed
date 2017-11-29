@@ -21,10 +21,10 @@ class SeedTest extends TestCase
      */
     public function itShouldResultInSameResult()
     {
-        $name = $this->getFaker()->name();
-        $this->assertEquals($name, $this->getFaker()->name());
+        $name = $this->fake()->name();
+        $this->assertEquals($name, $this->fake()->name());
 
-        $number = $this->getFaker()->numberBetween(0, 22);
-        $this->assertEquals($number, $this->getFaker()->numberBetween(0, 22));
+        $number = $this->fake()->numberBetween(0, 22);
+        $this->assertEquals($number, $this->fake()->numberBetween(0, 22));
     }
 }

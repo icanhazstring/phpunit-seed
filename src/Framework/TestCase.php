@@ -19,7 +19,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * @return Generator
      */
-    protected function getFaker()
+    private function getFaker()
     {
         if ($this->faker === null) {
             $this->faker = Factory::create();
@@ -30,5 +30,13 @@ class TestCase extends \PHPUnit\Framework\TestCase
         }
 
         return $this->faker;
+    }
+
+    /**
+     * @return Generator
+     */
+    protected function fake()
+    {
+        return $this->getFaker();
     }
 }
