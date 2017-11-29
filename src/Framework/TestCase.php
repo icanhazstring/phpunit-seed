@@ -13,16 +13,24 @@ use Faker\Generator;
  */
 class TestCase extends \PHPUnit\Framework\TestCase
 {
+    protected const FAKER_LOCALE = Factory::DEFAULT_LOCALE;
+
+    /** @var string Holds current faker locale */
+    private $fakerLocale;
+
     /** @var Generator */
     private $faker;
 
     /**
+     * @param string $locale Faker locale
+     *
      * @return Generator
      */
-    private function getFaker()
+    private function getFaker($locale)
     {
-        if ($this->faker === null) {
-            $this->faker = Factory::create();
+        if ($this->faker === null || $locale !== $this->fakerLocale) {
+            $this->faker = Factory::create($locale);
+            $this->fakerLocale = $locale;
         }
 
         if (defined('PHPUNIT_SEED') && PHPUNIT_SEED) {
@@ -35,8 +43,8 @@ class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * @return Generator
      */
-    protected function fake()
+    protected function fake($locale = null)
     {
-        return $this->getFaker();
+        return $this->getFaker($locale ?? static::FAKER_LOCALE);
     }
 }

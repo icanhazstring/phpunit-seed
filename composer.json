@@ -29,5 +29,15 @@
         "psr-4": {
             "PHPUnitSeed\\Test\\": "test"
         }
+    },
+    "scripts": {
+        "test": "bin/phpunit-seed",
+
+        "cs": [
+            "@cs-src",
+            "@cs-test"
+        ],
+        "cs-src": "vendor/bin/phpcs --standard=PSR2 src/",
+        "cs-test": "vendor/bin/phpcs --standard=PSR2 test/"
     }
 }

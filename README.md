@@ -58,5 +58,32 @@ In the last output line you will see the seed number which was used for this exe
 If you want to execute the same tests, with same `random` values, use the `--seed=<int>` argument
 for the binary.
 
+## Change Fake locale
+
+You can change the locale of 'Faker' in two ways:
+
+1. Change the `static FAKE_LOCALE` in your test class
+    ```php
+    class MyTestCase extends PHPUnitSeed\Framework\Testcase
+    {
+        protected static FAKE_LOCALE = 'de_DE';
+
+         public function itShouldTestWithDELocale()
+        {
+            $name = $this->fake()->name; // will be name from de_DE provider
+        }
+    }
+    ```
+2. Call the `fake` method with your desired locale
+    ```php
+    class MyTestCase extends PHPUnitSeed\Framework\Testcase
+    {
+        public function itShouldTestWithDELocale()
+        {
+            $name = $this->fake('de_DE')->name; // will be name from de_DE provider
+        }
+    }
+    ```
+
 ## Faker Documentation
 For a full usage on `Faker` see [fzaninotto/Faker](https://github.com/fzaninotto/Faker)
