@@ -9,7 +9,7 @@ phpunit extenstion with [fzaninotto/Faker](https://github.com/fzaninotto/Faker) 
 To install this extension, simply use `composer`.
 
 ```bash
-$ composer require --dev icanhazstring/phpunit-seed:^0.1
+$ composer require --dev icanhazstring/phpunit-seed:^0.2
 ```
 
 ## Usage
@@ -17,15 +17,15 @@ $ composer require --dev icanhazstring/phpunit-seed:^0.1
 To use this extension, make sure your tests derive from 
 `PHPUnitSeed\Framework\TestCase` instead of the `PHPUnit` default.
 
-This will add a new function `getFaker()` into your test suites.
+This will add a new function `fake()` into your test suites.
 
 ```php
 class SuperTest extends PHPUnitSeed\Framework\Testcase
 {
     public function testAwesome()
     {
-        $name = $this->getFaker()->name();
-        $this->assertEquals($name, $this->getFaker()->name());
+        $name = $this->fake()->name();
+        $this->assertEquals($name, $this->fake()->name());
         // should work
     }
 }
