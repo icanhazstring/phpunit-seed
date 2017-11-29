@@ -27,7 +27,7 @@ if (!ini_get('date.timezone')) {
     ini_set('date.timezone', 'UTC');
 }
 
-for($i=3; $i>=0; --$i) {
+for($i=4; $i>=0; --$i) {
     $autoloadFiles[] = str_pad('/vendor/autoload.php', 20 + ($i * 3), '/..', STR_PAD_LEFT);
 }
 
