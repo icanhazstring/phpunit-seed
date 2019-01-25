@@ -1,5 +1,7 @@
 # phpunit-seed
 
+**DEPRECATED** in favor of [icanhazstring/phpunit-faker-extension](https://github.com/icanhazstring/phpunit-faker-extension)
+
 [![Build Status](https://api.travis-ci.org/icanhazstring/phpunit-seed.svg?branch=master)](https://travis-ci.org/icanhazstring/phpunit-seed)
 
 phpunit extenstion with [fzaninotto/Faker](https://github.com/fzaninotto/Faker) integration
