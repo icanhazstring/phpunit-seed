@@ -39,5 +39,6 @@
         ],
         "cs-src": "vendor/bin/phpcs --standard=PSR2 src/",
         "cs-test": "vendor/bin/phpcs --standard=PSR2 test/"
-    }
+    },
+    "abandoned": "icanhazstring/phpunit-faker-extension"
 }
